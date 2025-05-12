@@ -8,6 +8,12 @@ export const ShipModule = (function () {
         }
         hit() {
             this.hitCount += 1;
+            if (this.isSunk()) {this.sunk = true};
+        }
+        isSunk() {
+            if(this.hitCount === this.shipLen) {
+                return true;
+            }
         }
     }
 

@@ -15,3 +15,10 @@ test("createShip(len) to return a ship object", () => {
         sunk: false
     })
 })
+
+test.only("isSunk() to return true if hitCount is equal to len of ship", () => {
+    const aShip = ShipModule.createShip(1);
+    expect(aShip.sunk).toBe(false);
+    aShip.hit();
+    expect(aShip.sunk).toBe(true);
+})
